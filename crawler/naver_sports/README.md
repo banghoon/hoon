@@ -1,3 +1,4 @@
-# crawling naver_sports
+# crawling naver sports news
+
 * selenium
 * no multi-processing
