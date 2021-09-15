@@ -1,4 +1,4 @@
 # Hoon
 
-- crawler(naver sports news, 20210910)
-- 
+- naver sports news crawler(20210910)
+- naver news crawler with multi-processing(20210916)
