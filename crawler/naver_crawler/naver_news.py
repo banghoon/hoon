@@ -1,9 +1,7 @@
-import pandas as pd
 from selenium import webdriver
 from multiprocessing import Pool
 from selenium.webdriver.support.ui import WebDriverWait
 import numpy as np
-from itertools import product
 
 
 def find_last_page(url):
