@@ -5,3 +5,4 @@
 
 ### Quick Start
 - python LSTM4stacked.py
+- python model.py
