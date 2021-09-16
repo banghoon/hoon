@@ -32,16 +32,21 @@ def crawling_news(path):
         for i in range(pages):
             print(f'{i+1}/{pages}')
             driver.get(url + f'&page={i+1}')
-            results = driver.find_elements_by_xpath('//*[@id="main_content"]/div/ul/li/dl/dt/a[@class="nclicks(fls.list)"]')
-            for result in results:
+            results = driver.find_elements_by_xpath(
+                '//div[@id="main_content"]/div/ul/li/dl/dt/a[@class="nclicks(fls.list)"]')
+            comps = driver.find_elements_by_xpath('//div[@id="main_content"]/div/ul/li/dl/dd/span[2]')
+            for comp, result in zip(comps, results):
                 if (result.text == '동영상기사') or (result.text == ''):
                     continue
-                # print(f'{menu[path]}: {result.text}')
+                print(f'{menu[path]} : {comp.text} : {result.text} : {result.get_attribute("href")}')
+
+
+                # db 연결 후 바로 입력
     driver.close()
 
 
 if __name__ == '__main__':
     urls = [str(i) for i in range(100, 106)]
-    pool = Pool(processes=8)
+    pool = Pool(processes=6)
     pool.map(crawling_news, urls)
 
