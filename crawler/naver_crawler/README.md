@@ -4,7 +4,7 @@
 * no multi-processing
 
 
-# crawling naver sports news
+# crawling naver news
 
 * selenium
 * multi-processing(8)
